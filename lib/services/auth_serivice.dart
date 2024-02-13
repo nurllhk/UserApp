@@ -3,6 +3,7 @@ import 'dart:ffi';
 
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:userapp/controllers/login_controller.dart';
 
 class AuthServices {
   Future<bool> signinWithEmailAndPassword(String email, String password) async {
@@ -29,10 +30,7 @@ class AuthServices {
     await prefs.setString("authToken", token);
   }
 
-  static Future<String?> getAuthToken() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString("authToken");
-  }
+
 
   static Future<void> deleteAuthToken() async {
     final prefs = await SharedPreferences.getInstance();

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:userapp/main.dart';
 import 'package:userapp/views/components/show_dialog.dart';
 import 'package:userapp/views/components/validaton.dart';
-
 import '../services/auth_serivice.dart';
 import 'components/custom_input.dart';
+import 'home_view.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
