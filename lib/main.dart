@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AuthServices.getAuthToken() ==null ? Login():Home(),
+      home: AuthServices.getAuthToken() == null ? const Login():const Login(),
     );
   }
 }
@@ -36,12 +36,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){
-       setState(() {
-         AuthServices.deleteAuthToken();
-       });
 
-      },child: Icon(Icons.remove),),
     );
   }
 }

@@ -1,10 +1,11 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthServices {
-  Future<void> signinWithEmailAndPassword(String email, String password) async {
+  Future<bool> signinWithEmailAndPassword(String email, String password) async {
     final response = await http.post(
       Uri.parse('https://reqres.in/api/login'),
       body: {
@@ -16,8 +17,10 @@ class AuthServices {
     if (response.statusCode == 200) {
       Map<String, dynamic> res = jsonDecode(response.body);
       saveAuthToken(res["token"]);
+      return true;
     } else {
-      throw Exception("Hata ${response.statusCode}");
+      return false;
+      // throw Exception("Hata ${response.statusCode}");
     }
   }
 
