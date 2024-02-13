@@ -1,9 +1,6 @@
 import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:userapp/controllers/login_controller.dart';
 
 class AuthServices {
   Future<bool> signinWithEmailAndPassword(String email, String password) async {

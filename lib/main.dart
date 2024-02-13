@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:userapp/controllers/login_controller.dart';
-import 'package:userapp/services/auth_serivice.dart';
 import 'package:userapp/views/home_view.dart';
 import 'package:userapp/views/login_view.dart';
 
